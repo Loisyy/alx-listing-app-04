@@ -22,7 +22,7 @@ const BookingForm = () => {
       setError(null);
 
       try {
-         const response = await axios.post("/api/bookings", formData);
+         const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE_URL}/bookings`, formData);
          alert("Booking confirmed!");
       } catch (error) {
          setError("Failed to submit booking.");
